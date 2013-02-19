@@ -12,4 +12,16 @@ class Card < ActiveRecord::Base
   def get_image_url
   	return "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=#{self.mtg_id}&type=card"
   end  
+
+  def self.example_csv()
+  	columnas = *accessible_attributes
+  	columnas.delete_at(0)
+  	#Por algun motivo accesible_attributes revuelve el elemento 0 como "" vacio
+    CSV.generate(col_sep: "|") do |csv|
+	  csv << columnas
+	  all(:limit => 5).each do |card|
+	    csv << card.attributes.values_at(*columnas)
+      end
+    end
+  end
 end
