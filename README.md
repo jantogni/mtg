@@ -1,4 +1,5 @@
-mtg
-===
+Proyecto MTG
+============
 
-Magic The Gathering
+ * Ruby 1.9.3
+ * Rails 3.2.12
