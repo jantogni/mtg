@@ -84,8 +84,13 @@ class CardsController < ApplicationController
 
   #Import CSV (ver routes.rb)
   def import
-    Card.import(params[:file])
-    redirect_to cards_path, notice: "Cards imported." 
+    if params[:file]
+      Card.import(params[:file])
+      flash[:notice] = "Cards imported." 
+    else
+      flash[:alert] = "CSV not Found."
+    end
+    redirect_to cards_path
   end
 
 end
