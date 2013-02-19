@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag(@card.get_image_url) %>
+</p>
+
+
+<p>
+  <b>Name:</b>
+  <%= @card.name %>
+</p>
+
+<p>
+  <b>Set name:</b>
+  <%= @card.set_name %>
+</p>
+
+<p>
+  <b>Set code:</b>
+  <%= @card.set_code %>
+</p>
+
+<p>
+  <b>Mtg:</b>
+  <%= @card.mtg_id %>
+</p>
+
+<p>
+  <b>Card type:</b>
+  <%= @card.card_type %>
+</p>
+
+<p>
+  <b>Power:</b>
+  <%= @card.power %>
+</p>
+
+<p>
+  <b>Toughness:</b>
+  <%= @card.toughness %>
+</p>
+
+<p>
+  <b>Loyalty:</b>
+  <%= @card.loyalty %>
+</p>
+
+<p>
+  <b>Manacost:</b>
+  <%= @card.manacost %>
+</p>
+
+<p>
+  <b>Converted manacost:</b>
+  <%= @card.converted_manacost %>
+</p>
+
+<p>
+  <b>Artist:</b>
+  <%= @card.artist %>
+</p>
+
+<p>
+  <b>Flavor:</b>
+  <%= @card.flavor %>
+</p>
+
+<p>
+  <b>Number:</b>
+  <%= @card.number %>
+</p>
+
+<p>
+  <b>Rarity:</b>
+  <%= @card.rarity %>
+</p>
+
+<p>
+  <b>Ruling:</b>
+  <%= @card.ruling %>
+</p>
+
+<p>
+  <b>Ability:</b>
+  <%= @card.ability %>
+</p>
+
+<p>
+  <b>Watermark:</b>
+  <%= @card.watermark %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>
