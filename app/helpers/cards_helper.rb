@@ -22,6 +22,7 @@ module CardsHelper
       '{W}' => image_tag("mtg_icons/w.gif", :alt => "{W}"),
       '{G}' => image_tag("mtg_icons/g.gif", :alt => "{G}"),
       '{GB}' => image_tag("mtg_icons/gb.gif", :alt => "{GB}"),
+      '{GU}' => image_tag("mtg_icons/gu.gif", :alt => "{GU}"),
       '{GR}' => image_tag("mtg_icons/gr.gif", :alt => "{GR}"),
       '{RB}' => image_tag("mtg_icons/rb.gif", :alt => "{RB}"),
       '{RW}' => image_tag("mtg_icons/rw.gif", :alt => "{RW}"),
@@ -37,7 +38,7 @@ module CardsHelper
     text = text.gsub(/(#_|_#|£)/){ tokens[$1] }
     text = text.gsub(/(\{X\}|\{0\}|\{1\}|\{2\}|\{3\}|\{4\})/){ tokens[$1] }
     text = text.gsub(/(\{5\}|\{6\}|\{7\}|\{8\}|\{9\}|\{10\})/){ tokens[$1] }
-    text = text.gsub(/(\{GB\}|\{GR\}|\{RB\}|\{RW\}|\{UB\})/){ tokens[$1] }
+    text = text.gsub(/(\{GU\}|\{GB\}|\{GR\}|\{RB\}|\{RW\}|\{UB\})/){ tokens[$1] }
     text = text.gsub(/(\{UW\}|\{UG\}|\{UR\}|\{WB\}|\{WG\}|\{RG\})/){ tokens[$1] }
     text = text.gsub(/(\{T\})/){ tokens[$1] }
     text.gsub(/(\{R\}|\{U\}|\{B\}|\{W\}|\{G\})/){ tokens[$1] }.html_safe
