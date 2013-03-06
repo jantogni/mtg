@@ -20,8 +20,8 @@ figure, footer, header, nav, section, figcaption { display: block; }
 	      position:relative;
 	      float:left;
 	      margin:20px;
-	      width:198px;
-	      height:198px;
+	      width:223px;
+	      height:310px;
 	      border:1px solid #333;
 	      overflow:hidden;
 	      background: #fff;
@@ -33,7 +33,7 @@ figure, footer, header, nav, section, figcaption { display: block; }
 	      bottom:0;
 	      left:0;
 	      opacity: .75;
-	      margin-bottom:-115px;		
+	      margin-bottom:-120px;		
 	      -webkit-transition: margin-bottom;
 	      -webkit-transition-duration: 400ms;
 	      -webkit-transition-timing-function: ease-out;
@@ -50,8 +50,8 @@ figure, footer, header, nav, section, figcaption { display: block; }
 }
 
 #imagegallery section figcaption {
-	      width:200px;
-	      height:115px;
+	      width:226px;
+	      height:120px;
 	      background:#111;
 	      color:#fff;
 	      font-family: Arial, Helvetica, sans-serif;
