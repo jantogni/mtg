@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<div id="show_card">
+  <div class="card_image">
+    <%= image_tag(@card.get_image_url) %>
+  </div>
+  <div class="description">
+    <h3>Information</h3>
+    <p><b>Name:</b><%= @card.name %></p>
+    <p><b>Card type:</b><%= @card.card_type %></p>
+    <p><b>Cost:</b><%= parse_gatherer_tokens(@card.manacost.to_s)%></p>
+    <% if @card.ruling %>
+    <h3>Ruling:</h3>
+    <p><%= parse_gatherer_tokens(@card.ruling.to_s) %></p>
+    <% end %>
+    <% if @card.flavor %>
+    <h3>Flavor</h3>
+    <p><%= parse_gatherer_tokens(@card.flavor.to_s) %></p>
+    <% end %>
+  </div>
+</div>
+<div class="clear"></div>
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

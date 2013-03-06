@@ -1,0 +1,85 @@
+<%= form_for(@card) do |f| %>
+  <% if @card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% @card.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :set_name %><br />
+    <%= f.text_field :set_name %>
+  </div>
+  <div class="field">
+    <%= f.label :set_code %><br />
+    <%= f.text_field :set_code %>
+  </div>
+  <div class="field">
+    <%= f.label :mtg_id %><br />
+    <%= f.number_field :mtg_id %>
+  </div>
+  <div class="field">
+    <%= f.label :card_type %><br />
+    <%= f.text_field :card_type %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br />
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :toughness %><br />
+    <%= f.text_field :toughness %>
+  </div>
+  <div class="field">
+    <%= f.label :loyalty %><br />
+    <%= f.text_field :loyalty %>
+  </div>
+  <div class="field">
+    <%= f.label :manacost %><br />
+    <%= f.text_field :manacost %>
+  </div>
+  <div class="field">
+    <%= f.label :converted_manacost %><br />
+    <%= f.number_field :converted_manacost %>
+  </div>
+  <div class="field">
+    <%= f.label :artist %><br />
+    <%= f.text_field :artist %>
+  </div>
+  <div class="field">
+    <%= f.label :flavor %><br />
+    <%= f.text_area :flavor %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br />
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :rarity %><br />
+    <%= f.text_field :rarity %>
+  </div>
+  <div class="field">
+    <%= f.label :ruling %><br />
+    <%= f.text_area :ruling %>
+  </div>
+  <div class="field">
+    <%= f.label :ability %><br />
+    <%= f.text_area :ability %>
+  </div>
+  <div class="field">
+    <%= f.label :watermark %><br />
+    <%= f.text_field :watermark %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

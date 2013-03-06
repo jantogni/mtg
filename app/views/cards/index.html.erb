@@ -1,0 +1,38 @@
+<h1>Listing Cards</h1>
+<nav>
+    <ul>
+      <li><a href="#gatecrash">Gatecrash</a></li>
+      <li><a href="#">Otro</a></li>
+    </ul>
+    <%= will_paginate @cards %>
+</nav>
+<section id="imagegallery">
+  <section id="gatecrash">
+    <h2>GateCrash Gallery Example</h2>
+    <% @cards.each do |card| %>
+    <figure>
+      <%= link_to image_tag(card.get_image_url), card %>
+      <figcaption>
+	<h3><%= card.name %></h3>
+	<h4><%= card.card_type %></h4>
+	<p><%= parse_gatherer_tokens(card.manacost.to_s) %></p>
+      </figcaption>
+    </figure>
+    <% end %>
+  </section>
+</section>
+
+<div style="clear: both;">
+<%= link_to 'New Card', new_card_path %>
+
+<h2>Import Cards</h2>
+
+<%= form_tag(import_cards_path, :multipart => :true) do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
+<%= link_to 'CSV Example', "/cards.csv" %>
+</div>
+<div id="hoverbox">Oculto</div>
+
