@@ -36,3 +36,6 @@ gem 'jquery-rails'
 
 # To use debugger
 # gem 'debugger'
+
+#willPaginate
+gem 'will_paginate', '~> 3.0.0'

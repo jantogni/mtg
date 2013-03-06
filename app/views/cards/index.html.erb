@@ -1,57 +1,28 @@
-<h1>Listing cards</h1>
+<h1>Listing Cards</h1>
+<nav>
+    <ul>
+      <li><a href="#gatecrash">Gatecrash</a></li>
+      <li><a href="#">Otro</a></li>
+    </ul>
+    <%= will_paginate @cards %>
+</nav>
+<section id="imagegallery">
+  <section id="gatecrash">
+    <h2>GateCrash Gallery Example</h2>
+    <% @cards.each do |card| %>
+    <figure>
+      <%= link_to image_tag(card.get_image_url), card %>
+      <figcaption>
+	<h3><%= card.name %></h3>
+	<h4><%= card.card_type %></h4>
+	<p><%= parse_gatherer_tokens(card.manacost.to_s) %></p>
+      </figcaption>
+    </figure>
+    <% end %>
+  </section>
+</section>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Set name</th>
-    <th>Set code</th>
-    <th>Mtg</th>
-    <th>Card type</th>
-    <th>Power</th>
-    <th>Toughness</th>
-    <th>Loyalty</th>
-    <th>Manacost</th>
-    <th>Converted manacost</th>
-    <th>Artist</th>
-    <th>Flavor</th>
-    <th>Number</th>
-    <th>Rarity</th>
-    <th>Ruling</th>
-    <th>Ability</th>
-    <th>Watermark</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @cards.each do |card| %>
-  <tr>
-    <td><span onmouseover="hoverbox_show(this, '<%= card.get_image_url %>', 'div')" onmouseout="hoverbox_hide()"><%= card.name %></span></td>
-    <td><%= card.set_name %></td>
-    <td><%= card.set_code %></td>
-    <td><%= card.mtg_id %></td>
-    <td><%= card.card_type %></td>
-    <td><%= card.power %></td>
-    <td><%= card.toughness %></td>
-    <td><%= card.loyalty %></td>
-    <td><%= parse_gatherer_tokens(card.manacost.to_s) %></td>
-    <td><%= card.converted_manacost %></td>
-    <td><%= card.artist %></td>
-    <td><%= parse_gatherer_tokens(card.flavor.to_s) %></td>
-    <td><%= card.number %></td>
-    <td><%= card.rarity %></td>
-    <td><%= parse_gatherer_tokens(card.ruling.to_s) %></td>
-    <td><%= parse_gatherer_tokens(card.ability.to_s) %></td>
-    <td><%= card.watermark %></td>
-    <td><%= link_to 'Show', card %></td>
-    <td><%= link_to 'Edit', edit_card_path(card) %></td>
-    <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
+<div style="clear: both;">
 <%= link_to 'New Card', new_card_path %>
 
 <h2>Import Cards</h2>
@@ -62,5 +33,6 @@
 <% end %>
 
 <%= link_to 'CSV Example', "/cards.csv" %>
-
+</div>
 <div id="hoverbox">Oculto</div>
+
