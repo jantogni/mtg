@@ -103,3 +103,11 @@ figure, footer, header, nav, section, figcaption { display: block; }
        position: absolute;
 }
 */
+
+/*  SHOW */
+div#show_card > div.card_image { float: left; }
+div#show_card > div.description {
+  margin-left: 20px;
+  float: left;
+}
+.clear { clear: both }
