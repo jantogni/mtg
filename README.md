@@ -20,3 +20,5 @@ Proyecto MTG
 ## Branches
 
 * smorales-CardScaffold (mergida al master), contiene trabajos premilinares del modelo Card.
+* omniauth en desarrollo buscando autenticacion funcional con G+ y Facebook.
+ * Es necesario desencriptar y sobreescribir  config/local_env.yml utilizando gpg: gpg local_env.yml. La contraseña es la de siempre sin espacios.
