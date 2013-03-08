@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130219211751) do
+ActiveRecord::Schema.define(:version => 20130307025921) do
 
   create_table "cards", :force => true do |t|
     t.string   "name"
@@ -33,6 +33,19 @@ ActiveRecord::Schema.define(:version => 20130219211751) do
     t.string   "watermark"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "name"
+    t.string   "email"
+    t.string   "oauth_token"
+    t.string   "oauth_secret"
+    t.datetime "oauth_expires_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.string   "image"
   end
 
 end

@@ -15,6 +15,17 @@
     <p class="flash-notice"><%= flash[:notice] %></p>
   <% end %>
 
+  <div id="user_nav">
+  <% if current_user %>
+    <%= image_tag(current_user.image, :id => "user_avatar", :alt => "current_user.name", :size => "50x50") %>
+    Signed in as <strong><%= current_user.name %></strong>!
+    <%= link_to "Sign out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook", "/auth/facebook", class: "sign_in" %>
+    <%= link_to "Sign in with Google+", "/auth/google_oauth2", class: "sign_in" %>
+  <% end %>
+  </div>
+
 <%= yield %>
 
 </body>
