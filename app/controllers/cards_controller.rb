@@ -2,7 +2,11 @@ class CardsController < ApplicationController
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.paginate(:page => params[:page], :per_page => 15)
+    unless params[:edition].nil? or params[:edition].empty?
+      @cards = Card.where(:set_code => params[:edition]).order('mtg_id DESC').page(params[:page]).per_page(15)
+    else
+      @cards = Card.order('mtg_id DESC').page(params[:page]).per_page(15)
+    end
 
     respond_to do |format|
       format.html # index.html.erb

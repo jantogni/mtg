@@ -1,14 +1,18 @@
 <h1>Listing Cards</h1>
 <nav>
-    <ul>
-      <li><a href="#gatecrash">Gatecrash</a></li>
-      <li><a href="#">Otro</a></li>
-    </ul>
-    <%= will_paginate @cards %>
+<%= will_paginate @cards %>
+
+<%= form_tag(cards_path, :method => 'get' ) do %>
+<%= select_tag "edition", options_from_collection_for_select(Edition.find(:all, :order => "date DESC"), :code, :name), :prompt => "All" %>
+<%= submit_tag 'Filtrar' %>
+<% end %>
+
 </nav>
+
+
 <section id="imagegallery">
   <section id="gatecrash">
-    <h2>GateCrash Gallery Example</h2>
+    <h2>Card Gallery Example</h2>
     <% @cards.each do |card| %>
     <figure>
       <%= link_to image_tag(card.get_image_url), card %>
@@ -30,6 +34,7 @@
 <%= form_tag(import_cards_path, :multipart => :true) do %>
   <%= file_field_tag :file %>
   <%= submit_tag "Import" %>
+
 <% end %>
 
 <%= link_to 'CSV Example', "/cards.csv" %>
