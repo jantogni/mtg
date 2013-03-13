@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @edition.name %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @edition.code %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @edition.date %>
+</p>
+
+<p>
+  <b>Is promo:</b>
+  <%= @edition.is_promo %>
+</p>
+
+
+<%= link_to 'Edit', edit_edition_path(@edition) %> |
+<%= link_to 'Back', editions_path %>

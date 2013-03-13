@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  code: MyString
+  date: 2013-03-13
+  is_promo: false
+
+two:
+  name: MyString
+  code: MyString
+  date: 2013-03-13
+  is_promo: false
