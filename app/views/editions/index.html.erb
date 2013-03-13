@@ -1,0 +1,29 @@
+<h1>Listing editions</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Code</th>
+    <th>Date</th>
+    <th>Is promo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @editions.each do |edition| %>
+  <tr>
+    <td><%= edition.name %></td>
+    <td><%= edition.code %></td>
+    <td><%= edition.date %></td>
+    <td><%= edition.is_promo %></td>
+    <td><%= link_to 'Show', edition %></td>
+    <td><%= link_to 'Edit', edit_edition_path(edition) %></td>
+    <td><%= link_to 'Destroy', edition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Edition', new_edition_path %>

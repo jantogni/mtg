@@ -1,5 +1,8 @@
 Mtg::Application.routes.draw do
 
+  resources :editions
+
+
   resources :cards do
     collection do
       post 'import'
