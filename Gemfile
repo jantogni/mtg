@@ -41,3 +41,4 @@ gem 'jquery-rails'
 gem 'will_paginate', '~> 3.0.0'
 gem 'omniauth-facebook', '1.4.0'
 gem "omniauth-google-oauth2"
+gem 'nokogiri'
