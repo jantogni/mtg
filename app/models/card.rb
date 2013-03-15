@@ -24,4 +24,96 @@ class Card < ActiveRecord::Base
       end
     end
   end
+
+  def has_red?
+    count = self.manacost.scan(/\{[0-9]*[WBUG]*R[WBUG]*\}/).size
+    if count != 0 
+      return count
+    end
+    return false
+  end
+
+  def has_blue?
+    count = self.manacost.scan(/\{[0-9]*[WBRG]*U[WBRG]*\}/).size
+    if count != 0
+      return count
+    end
+    return false
+  end
+
+  def has_white?
+    count = self.manacost.scan(/\{[0-9]*[RBUG]*W[RBUG]*\}/).size
+    if count != 0
+      return count
+    end
+    return false
+  end
+
+  def has_black?
+    count = self.manacost.scan(/\{[0-9]*[WRUG]*B[WRUG]*\}/).size
+    if count != 0
+      return count
+    end
+    return false
+  end
+
+  def has_green?
+    count = self.manacost.scan(/\{[0-9]*[WBUR]*G[WBUR]*\}/).size
+    if count != 0
+      return count
+    end
+    return false
+  end
+
+  def has_colorless?
+    count = self.manacost.scan(/\{[0-9]+\}/).size
+    if count != 0 and not nil
+      return count
+    end
+    return false
+  end
+
+  def is_colorless?
+    count = self.manacost.scan(/[WBURG]/).size
+    if count != 0 and not nil
+      return false
+    end
+    return self.converted_manacost
+  end
+
+  def is_multicolor?
+    token = 0
+    if self.has_red?
+      token += 1
+      if token == 2
+        return true
+      end
+    end
+    if self.has_blue?
+      token += 1
+      if token == 2
+        return true
+      end
+    end
+    if self.has_white?
+      token += 1
+      if token == 2
+        return true
+      end
+    end
+    if self.has_black?
+      token += 1
+      if token == 2
+        return true
+      end
+    end
+    if self.has_green?
+      token += 1
+      if token == 2
+        return true
+      end
+    end
+    return false
+  end
+
 end
