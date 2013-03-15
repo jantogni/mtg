@@ -17,8 +17,11 @@ Proyecto MTG
 1. rake db:migrate
 1. Utilizar doc/gatecrash.csv como ejemplo para poblar la base de datos de cartas.
 
-## Branches
+## Rake
 
-* smorales-CardScaffold (mergida al master), contiene trabajos premilinares del modelo Card.
-* omniauth en desarrollo buscando autenticacion funcional con G+ y Facebook.
- * Es necesario desencriptar y sobreescribir  config/local_env.yml utilizando gpg: gpg local_env.yml. La contraseña es la de siempre sin espacios.
+* rake db:populate: Importa 24000+ cartas desde doc/cards.xml.
+* rake db:populate_edition: Importa ediciones.
+
+## Auth Facebook,G+
+
+Se debe desencriptar config/local_env.yml utilizando gpg
